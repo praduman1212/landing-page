@@ -1,115 +1,89 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Image from 'next/image';
+import logo from '../public/shiprocket_logo.svg';
+import profileImage from '../public/home-slider-image-15-1.webp';
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-r from-purple-200 via-pink-100 to-blue-200">
+      {/* Top Navbar */}
+      <div className="bg-brandPurple text-sm py-2 text-center text-white font-semibold">
+        <p>Recharge Now for ₹1000 & Get ₹1600* In Your Wallet. Use Code: FLAT600 | Limited Period Offer</p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <header className="flex items-center justify-between p-6 shadow-md bg-white">
+        <Image src={logo} alt="Shiprocket Logo" width={150} height={50} />
+        <nav className="flex items-center space-x-6 text-gray-600 font-medium">
+          <a href="#" className="hover:text-brandPurple">Products</a>
+          <a href="#" className="hover:text-brandPurple">Platform</a>
+          <a href="#" className="hover:text-brandPurple">Pricing</a>
+          <a href="#" className="hover:text-brandPurple">Partners</a>
+          <a href="#" className="hover:text-brandPurple">Track Order</a>
+          <a href="#" className="hover:text-brandPurple">Resources</a>
+          <a href="#" className="hover:text-brandPurple">Quick</a>
+          <button className="px-4 py-1 bg-brandPurple text-white rounded-full">Sign Up Now</button>
+        </nav>
+      </header>
+
+      {/* Main Content - Page 1 */}
+      <main className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto mt-10 space-y-10 md:space-y-0">
+        {/* Left Section */}
+        <div className="flex-1 text-center md:text-left space-y-4">
+          <h1 className="text-6xl font-extrabold text-brandPurple leading-tight">
+            Ship your dream
+          </h1>
+          <p className="text-lg text-gray-700">
+            Create a delightful online journey by optimizing your shipping process and everything surrounding it.
+          </p>
+          <button className="px-6 py-3 bg-brandOrange text-white font-semibold rounded-full mt-4 hover:bg-orange-700">
+            Sign up for free
+          </button>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex-1 flex flex-col items-center space-y-6">
+          <div className="w-64 h-64 relative">
+            <Image src={profileImage} alt="Woman Reading" layout="fill" objectFit="cover" className="rounded-full shadow-lg" />
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Divider */}
+      <div className="h-1 bg-gray-300 my-16 mx-auto max-w-5xl" />
+
+      {/* Main Content - Page 2 */}
+      <section className="bg-gradient-to-r from-green-100 to-blue-100 py-16">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-lg text-purple-600">A trusted growth partner</p>
+          <h2 className="text-4xl font-bold text-purple-800 mt-4">
+            Lakhs of eCommerce businesses chose <span className="text-yellow-500">Shiprocket</span>
+          </h2>
+          <p className="text-4xl font-bold text-purple-800">to streamline their customer journey</p>
+          <p className="text-4xl font-bold text-purple-800">from shipping to returns and beyond</p>
+        </div>
+
+        {/* Stats Section */}
+        <section className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-10 max-w-5xl mx-auto text-center">
+          <div>
+            <h3 className="text-3xl font-bold text-purple-800">2.5 Lakh+</h3>
+            <p className="text-gray-500">merchants nationwide</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold text-purple-800">20 Crore</h3>
+            <p className="text-gray-500">transactions every year</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold text-purple-800">₹ 30K Crore</h3>
+            <p className="text-gray-500">annual GMV powered</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold text-purple-800">25 Crore</h3>
+            <p className="text-gray-500">shipments delivered</p>
+          </div>
+
+          
+
+        </section>
+      </section>
     </div>
   );
 }
